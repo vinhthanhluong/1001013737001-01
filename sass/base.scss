@@ -256,7 +256,7 @@ html {
     line-height: $lh-body;
     color: $fz-cl;
     background: $w-cl;
-    // @include custom-scrollbar(0px , transparent);
+    @include custom-scrollbar(0px , transparent);
 }
 
 a {

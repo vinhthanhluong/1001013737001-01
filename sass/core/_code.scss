@@ -1,3 +1,33 @@
 .main-cl{
     color: $main-cl;
 }
+
+.cl{
+    &-blue{
+        color: #004680;
+    }
+    &-orange{
+        color: #FF5B00;
+    }
+    &-green{
+        color: #419F25;
+    }
+    &-yellow{
+        color: #F3E600;
+    }
+}
+
+.bg{
+    &-blue{
+        background-color: #004680;
+    }
+    &-orange{
+        background-color: #FF5B00;
+    }
+    &-green{
+        background-color: #419F25;
+    }
+    &-yellow{
+        background-color: #F3E600;
+    }
+}

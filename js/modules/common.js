@@ -29,7 +29,7 @@ $(function () {
             this.toTop();
             this.anchorLink();
             // this.scrollToMail();
-            // this.visual();
+            this.visual();
             this.matchHeight();
             this.menu();
             this.accordion();
@@ -145,14 +145,15 @@ $(function () {
                     speed: 1000,
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 5000,
+                    // autoplay: true,
+                    // autoplaySpeed: 5000,
                     arrows: false,
                     centerMode: false,
                     centerPadding: 0,
                     pauseOnHover: false,
-                    fade: false,
                     variableWidth: false,
+                    fade: true,
+                    cssEase: 'linear'
                 });
             }
         },
@@ -190,11 +191,11 @@ $(function () {
             if ($('.header-menu').length) {
                 const _w = $(window).width();
                 if (_w < 751) {
-                    $('.dropdown > a').click(function () {
+                    $('.dropdown > span').click(function () {
                         $(this).toggleClass('open');
                         $(this).next('.sub-menu').stop().slideToggle();
                         $(this).closest('.dropdown').siblings().find('.sub-menu').stop().slideUp();
-                        $(this).closest('.dropdown').siblings().find('a').removeClass('open');
+                        $(this).closest('.dropdown').siblings().find('span').removeClass('open');
                     });
                 }
             }

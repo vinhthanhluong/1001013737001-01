@@ -13,9 +13,10 @@
 
     //  ========================== Header ==========================
     .menu-list {
+
         //level 1
-        > li {
-            > a {
+        >li {
+            >a {
                 &::before {
                     content: "";
                     position: absolute;
@@ -27,6 +28,7 @@
                     background-color: #1a2542;
                     transition: all 0.3s ease;
                 }
+
                 &:hover {
                     &::before {
                         width: 100%;
@@ -38,7 +40,7 @@
 
     .dropdown {
         &:hover {
-            > .sub-menu {
+            >.sub-menu {
                 transform: translateY(0);
                 pointer-events: auto;
                 @include visible;
@@ -66,8 +68,7 @@
 
 /* end screen-min:751px */
 
-@media screen and (min-width: 751px) and (max-width: 1500px) {
-}
+@media screen and (min-width: 751px) and (max-width: 1500px) {}
 
 /* end screen-min:751px && screen-max:1500px */
 
@@ -110,10 +111,8 @@
     }
 
     .open-nav {
-       
-
         .header-menu {
-            top: 169px;
+            top: 60px;
         }
     }
 
@@ -127,7 +126,25 @@
 
     // ========================== END Base code ==========================
 
-    //  ========================== Headeer ==========================
+    //  ========================== Header ==========================
+    #header {
+        height: auto;
+
+        .logo {
+            padding: 0;
+
+            img {
+                width: 175px;
+            }
+        }
+    }
+
+    .header-main {
+        align-items: center;
+        padding: 0 15px;
+        height: 60px;
+    }
+
     .header-menu {
         position: fixed;
         top: 100%;
@@ -139,29 +156,38 @@
         transition: all 0.4s ease;
         z-index: 98;
         background-color: rgba($color: #1e2c63, $alpha: .7);
-        background-color: #8cdcf0;
+        background-color: #fff;
     }
 
     .menu-list {
         display: block;
         overflow-x: hidden;
         overflow-y: auto;
-        height: 400px;
-        @include custom-scrollbar(3px, #1a2542);
+        height: calc(100vh - 60px);
+        // @include custom-scrollbar(3px, #004680);
 
-        // style chung
         a {
-            padding: 10px 20px;
-            border-bottom: 1px solid rgba($color: black, $alpha: 0.16);
-            transition: all 0.3s ease;
+            padding: 0;
         }
 
         // level 1
-        > li {
-            > a {
-                &:focus {
-                    color: #1a2542;
+        >li {
+            &:first-child {
+                a {
+                    border-top: 1px solid #EBEBEB;
                 }
+            }
+
+            >a,
+            span {
+                border-bottom: 1px solid #EBEBEB;
+                font-size: 16px;
+                font-weight: bold;
+                color: #004680;
+                padding: 10px 20px;
+                width: 100%;
+                display: block;
+                position: relative;
             }
         }
     }
@@ -169,118 +195,77 @@
     .dropdown {
         position: relative;
 
-        &:hover {
-            > a {
-                color: #1a2542;
-            }
-        }
-
         .open {
             &::before {
                 transform: scale(-1);
             }
         }
 
-        > a {
+        span {
             &::before {
                 content: "";
-                border-top: solid 8px #1e2c63;
-                border-left: solid 8px transparent;
-                border-right: solid 8px transparent;
+                background: url('../images/icon-arrow.png') center no-repeat;
+                width: 12px;
+                height: 8px;
                 position: absolute;
                 right: 15px;
                 top: calc(50% - 4px);
                 transition: all 0.2s;
             }
         }
-
-        .dropdown {
-            &:hover {
-                > a {
-                    &::before {
-                        border-top: solid 8px red;
-                    }
-                }
-            }
-        }
-
-        // .fa.fa-angle-down {
-        //     width: 20px;
-        //     height: 100%;
-        //     font-weight: bold;
-        //     transition: transform 0.3s;
-        //     text-align: center;
-
-        //     // mobile
-        //     @include max-media($bk-d-768) {
-        //         position: absolute;
-        //         top: 0;
-        //         right: 0;
-        //         width: 40px;
-
-        //         &:before {
-        //             @include pos-mid;
-        //         }
-
-        //         transform: rotate(-90deg);
-
-        //         &.--show {
-        //             transform: rotate(0deg);
-        //         }
-        //     }
-        // }
     }
 
     .sub-menu {
         position: relative;
         top: 0 !important;
         left: 0 !important;
-        width: 100%;
         display: none;
+        padding: 9px 30px;
 
         a {
-            padding-left: 30px;
-            border-bottom: 1px solid white;
+            padding: 6px 0 6px 16px;
+
             &:hover {
-                color: white;
-                background-color: #1a2542;
+                color: #004680;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 16px;
+                left: 0;
+                width: 10px;
+                height: 1px;
+                background-color: #004680;
             }
         }
-
-        .sub-menu a {
-            padding-left: 45px;
-        }
-
-        .sub-menu .sub-menu a {
-            padding-left: 60px;
-        }
     }
-    //  ========================== END - Headeer ==========================
+
+    //  ========================== END - Header ==========================
+
+
 }
 
 /* end screen-max:750px */
 
-@include max-media(640px) {
-}
+@include max-media(640px) {}
 
 /* end screen-max:640px */
 
-@include max-media(560px) {
-}
+@include max-media(560px) {}
 
 /* end screen-max:560px */
 
-@include max-media(520px) {
-}
+@include max-media(520px) {}
 
 /* end screen-max:520px */
 
-@include max-media(475px) {
-}
+@include max-media(475px) {}
 
 /* end screen-max:475px */
 
 @include max-media(425px) {
+
     h1,
     h2,
     h3,
@@ -306,29 +291,25 @@
 
 /* end screen-max:425px */
 
-@include max-media(375px) {
-}
+@include max-media(375px) {}
 
 /* end screen-max:375px */
 
-@include max-media(320px) {
-}
+@include max-media(320px) {}
 
 /* end screen-max:320px */
 
 /*============================= HACK CSS =============================*/
 
 /* IE */
-@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
-}
+@media (-ms-high-contrast: none),
+(-ms-high-contrast: active) {}
 
 /* EGDE */
-@supports (-ms-ime-align: auto) {
-}
+@supports (-ms-ime-align: auto) {}
 
 /* FIREFOX */
-@-moz-document url-prefix() {
-}
+@-moz-document url-prefix() {}
 
 /* Safari 10.1+ (which is the latest version of Safari at this time) */
 @media not all and (min-resolution: 0.001dpcm) {

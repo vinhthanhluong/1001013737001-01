@@ -218,36 +218,6 @@
   padding-bottom: 0;
 }
 
-.btn {
-  display: inline-block;
-  vertical-align: middle;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  border: none;
-  width: 100%;
-  line-height: 20px;
-  background-color: transparent;
-  transition: all 0.3s ease;
-  padding: 10px 0px;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-  position: relative;
-  overflow: hidden;
-  z-index: 0;
-  outline: 0px;
-}
-.btn:disabled, .btn:disabled:hover {
-  cursor: not-allowed;
-  color: initial;
-}
-.btn:hover {
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
-}
-
 .hamburger-btn {
   width: 40px;
   height: 40px;
@@ -255,44 +225,47 @@
   cursor: pointer;
   display: none;
   z-index: 99;
+  border: 1px solid #004680;
+  border-radius: 100%;
 }
 .hamburger-btn .bar {
-  width: 30px;
-  height: 3px;
+  width: 20px;
+  height: 1px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #8cdcf0;
-  border-radius: 2px;
+  background-color: #004680;
+  border-radius: 1px;
   transition: all 0.3s ease;
 }
 .hamburger-btn .bar::before, .hamburger-btn .bar::after {
   content: "";
-  width: 30px;
-  height: 3px;
+  width: 20px;
+  height: 1px;
   position: absolute;
   left: 0;
-  border-radius: 2px;
-  background-color: #8cdcf0;
+  border-radius: 1px;
+  background-color: #004680;
   transition: all 0.3s ease;
 }
 .hamburger-btn .bar::before {
-  top: -8px;
+  top: -6px;
 }
 .hamburger-btn .bar::after {
-  top: 8px;
+  top: 6px;
 }
 .hamburger-btn.--active .bar {
   background-color: transparent;
 }
 .hamburger-btn.--active .bar::before {
-  top: 0;
   transform: rotate(45deg);
 }
 .hamburger-btn.--active .bar::after {
-  top: 0;
   transform: rotate(135deg);
+}
+.hamburger-btn.--active .bar::before, .hamburger-btn.--active .bar::after {
+  top: 0;
 }
 
 .scroll-top {
